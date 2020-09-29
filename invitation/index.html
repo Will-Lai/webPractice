@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event invitation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="intro">
+        <h1>
+            William's birthday party!
+        </h1>
+    </div>
+    <div class="time">
+        <h2>19:00, 8th Dec | 28 Kennedy Road</h2>
+    </div>
+
+
+    <div class="reservation">
+        <button type="button" class="button-reservation" id="reserve-btn">
+            <p>Reservation</p>
+        </button>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close">&times;</span>
+
+            <p>Let me know who you are &#128516;</p>
+            <form onsubmit="submitFunction()">
+                <label for="name">Name:</label>
+                <input type="text" class="name" required pattern="[A-Za-z ]+">
+                <input type="submit" ">
+            </form>
+        </div>
+    </div>
+
+
+    <script type = "text/javascript">
+        var modal = document.getElementById('myModal');
+        var btn = document.getElementById('reserve-btn');
+
+        btn.onclick = function(){
+            modal.style.display = "block";
+        }
+
+// click other places to exit the window
+        window.onclick = function (event){
+            if(event.target == modal){
+                modal.style.display = "none";
+            }
+        }
+
+// close button
+        var shut = document.getElementById('close');
+        shut.onclick = function(){
+            modal.style.display = "none";
+        }
+
+        function submitFunction(){
+            alert("Submitted! Thanks for coming:)");
+            my_window.close();
+        }
+
+    </script>
+</body>
+</html>
